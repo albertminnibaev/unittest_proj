@@ -11,7 +11,10 @@ def get(array, index, default=None):
     :param default: значение по-умолчанию.
     :return: значение по индексу или значение по-умолчанию.
     """
+    array_index = [index for index, value in enumerate(array)]
     if index < 0:
+        return default
+    elif index not in array_index:
         return default
 
     return array[index]
